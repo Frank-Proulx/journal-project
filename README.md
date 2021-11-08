@@ -51,5 +51,12 @@ Expected Output: 2
 
 Describe: letterChecker()
 Test: "It will discard any puncuation or spaces and only keep letters"
-Code: letterCheck(["s", "t", "r", "i", "n", "g", "!"])
-Expected Output: ["s", "t", "r", "i", "n", "g"]
+Code: letterCheck("a string!")
+Expected Output: ["a", "s", "t", "r", "i", "n", "g"]
+
+Describe: Entry.prototype.letterCounter()
+Test: "It should take an array of letters and create properties in Entry holding the number of vowels and the number of consonants respectively"
+Code: const myEntry = new Entry("April 1st", "Dear Diary");
+  myEntry.letterCounter();
+  myEntry;
+Expected Output: Entry {title: "April 1st", body: "Dear Diary", vowels: 4, consonants: 5}

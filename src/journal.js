@@ -18,3 +18,19 @@ function letterChecker(string) {
   return checked;
 }
 
+Entry.prototype.letterCounter = function() {
+  let letterArray = letterChecker(this.body);
+  let lowercaseLetterArray = letterArray.join("").toLowerCase().split("");
+  let vowelArray = ["a", "e", "i", "o", "u"];
+  let vowelCount = 0;
+  let consonantCount = 0;
+  for (i = 0; i < vowelArray.length; i++) {
+    for (j = 0; j < lowercaseLetterArray.length; j++) {
+      if (lowercaseLetterArray[j] === vowelArray[i]) {
+        vowelCount++;
+      }
+    }
+  }
+  this.vowelCount = vowelCount;
+  this.consonantCount = letterArray.length - vowelCount;
+};
