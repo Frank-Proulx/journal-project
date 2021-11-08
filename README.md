@@ -46,5 +46,10 @@ Expected Output: Entry {title: "April 1st", body: "Dear Diary"}
 Describe: Entry.prototype.wordCounter()
 Test: "It will return the number of words that the user inputs into a text field"
 Code: const myEntry = new Entry("April 1st", "Dear Diary")
-      myEntry.wordCounter()
+  myEntry.wordCounter()
 Expected Output: 2
+
+Describe: letterChecker()
+Test: "It will discard any puncuation or spaces and only keep letters"
+Code: letterCheck(["s", "t", "r", "i", "n", "g", "!"])
+Expected Output: ["s", "t", "r", "i", "n", "g"]
