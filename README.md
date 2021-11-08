@@ -60,3 +60,8 @@ Code: const myEntry = new Entry("April 1st", "Dear Diary");
   myEntry.letterCounter();
   myEntry;
 Expected Output: Entry {title: "April 1st", body: "Dear Diary", vowels: 4, consonants: 5}
+
+Describe: Entry.prototype.getTeaser()
+Test: "It will return words before the first period, up to the first eight words"
+Code: myEntry.getTeaser()
+Expected Output: "first eight words of the body."

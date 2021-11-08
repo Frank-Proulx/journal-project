@@ -34,3 +34,9 @@ Entry.prototype.letterCounter = function() {
   this.vowelCount = vowelCount;
   this.consonantCount = letterArray.length - vowelCount;
 };
+
+Entry.prototype.getTeaser = function() {
+  let wordArray = this.body.split(". ",1);
+  let newArray = wordArray.join("").split(" ").slice(0, 8);
+  this.teaser = newArray.join(" ");
+};
