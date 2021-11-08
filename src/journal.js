@@ -1,13 +1,13 @@
-function Entry(title, body) {
+export function Entry(title, body) {
   this.title = title;
   this.body = body;
 }
 
 Entry.prototype.wordCounter = function() {
-  return this.body.split(" ").length;
+  this.wordCount = this.body.split(" ").length;
 };
 
-function letterChecker(string) {
+export function letterChecker(string) {
   let checking = string.split('');
   let checked = [];
   checking.forEach(function(element) {
@@ -23,9 +23,8 @@ Entry.prototype.letterCounter = function() {
   let lowercaseLetterArray = letterArray.join("").toLowerCase().split("");
   let vowelArray = ["a", "e", "i", "o", "u"];
   let vowelCount = 0;
-  let consonantCount = 0;
-  for (i = 0; i < vowelArray.length; i++) {
-    for (j = 0; j < lowercaseLetterArray.length; j++) {
+  for (let i = 0; i < vowelArray.length; i++) {
+    for (let j = 0; j < lowercaseLetterArray.length; j++) {
       if (lowercaseLetterArray[j] === vowelArray[i]) {
         vowelCount++;
       }
@@ -38,7 +37,7 @@ Entry.prototype.letterCounter = function() {
 Entry.prototype.getTeaser = function() {
   let wordArray = this.body.split(" ").slice(0, 8);
   let element = [];
-  for (i = 0; i < wordArray.length; i++) {
+  for (let i = 0; i < wordArray.length; i++) {
     if (wordArray[i].charAt(wordArray[i].length - 1) == ".") {
       element = wordArray.slice(0, i);
       this.teaser = element.join(" ");
