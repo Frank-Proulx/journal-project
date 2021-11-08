@@ -36,7 +36,14 @@ Entry.prototype.letterCounter = function() {
 };
 
 Entry.prototype.getTeaser = function() {
-  let wordArray = this.body.split(". ",1);
-  let newArray = wordArray.join("").split(" ").slice(0, 8);
-  this.teaser = newArray.join(" ");
+  let wordArray = this.body.split(" ").slice(0, 8);
+  let element = [];
+  for (i = 0; i < wordArray.length; i++) {
+    if (wordArray[i].charAt(wordArray[i].length - 1) == ".") {
+      element = wordArray.slice(0, i);
+      this.teaser = element.join(" ");
+    } else {
+      this.teaser = wordArray.join(" ");
+    }
+  }
 };
