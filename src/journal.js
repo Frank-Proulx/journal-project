@@ -38,9 +38,10 @@ Entry.prototype.getTeaser = function() {
   let wordArray = this.body.split(" ").slice(0, 8);
   let element = [];
   for (let i = 0; i < wordArray.length; i++) {
-    if (wordArray[i].charAt(wordArray[i].length - 1) == ".") {
-      element = wordArray.slice(0, i);
+    if (wordArray[i].charAt(wordArray[i].length - 1) === ".") {
+      element = wordArray.slice(0, i+1);
       this.teaser = element.join(" ");
+      return true;
     } else {
       this.teaser = wordArray.join(" ");
     }

@@ -10,8 +10,11 @@ $("form#Journal").submit(function(event) {
   newEntry = new Entry($("input#title").val(), $("textarea#entry").val());
   console.log($("textarea#entry").val());
   newEntry.letterCounter();
-  // newEntry.wordCount();
+  newEntry.wordCounter();
   newEntry.getTeaser();
+});
+$("#word").click(function() {
+  $("#response").text(newEntry.wordCount);
 });
 $("#vowel").click(function() {
   $("#response").text(newEntry.vowelCount);
